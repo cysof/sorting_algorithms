@@ -1,17 +1,19 @@
 #include "sort.h"
 
 /**
- * insertion_sort_list - sort a doubley linked list
- * using the insertion algorithm
+ * insertion_sort_list - Sort a doubly linked list in ascending order
+ * using the Insertion algorithm.
  *
- * @list: pointer to the head of the list
- */
+ * @list: Pointer to the head of the list.
+*/
+
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *current, *sorted, *temp;
 
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
+
 	current = (*list)->next;
 
 	while (current)
@@ -34,8 +36,9 @@ void insertion_sort_list(listint_t **list)
 				sorted->prev->next = sorted;
 			else
 				*list = sorted;
+
+			/* print list after each swap */
 			print_list(*list);
 		}
 	}
 }
-
